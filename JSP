@@ -21,9 +21,14 @@
 		<tr>
 	
 		<c:forEach var = "teachers" items="${teachers}">
+		<spring:url value = "/teacher/updateTeacher/${teachers.id}" var = "updateUrl"/>
+		<spring:url value = "/teacher/deleteTeacher/${teachers.id}" var = "deleteUrl"/>
+		
 		<tr>
 			<th>${teachers.firstName}</th>
 			<th>${teachers.lastName}</th>
+			<th><a href = "${updateUrl}">Update</a></th>
+			<th><a href = "${deleteUrl}">Delete</a></th>
 		<tr>
 		</c:forEach>
 		
